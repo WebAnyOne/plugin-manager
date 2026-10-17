@@ -1,0 +1,8 @@
+{
+  "suite": "fresh-native-initialization",
+  "major": "5",
+  "status": "passed",
+  "schema_created": true,
+  "native_admin_created": true,
+  "scope": "Disposable database only; native Mautic installer completed. No deployment or rollback qualification."
+}

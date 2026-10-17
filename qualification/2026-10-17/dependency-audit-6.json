@@ -1,0 +1,63 @@
+{
+  "advisories": {
+    "symfony/security-http": {
+      "0": {
+        "advisoryId": "PKSA-c28x-6bj5-8spx",
+        "packageName": "symfony/security-http",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.53|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.41|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.13|>=8.0.0,<8.0.13",
+        "title": "CVE-2026-48489: Security Firewall Bypass via failure_forward Subrequest: Unauthenticated Access to access_control-Protected GET Routes",
+        "cve": "CVE-2026-48489",
+        "link": "https://symfony.com/cve-2026-48489",
+        "reportedAt": "2026-05-26T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-6h46-9jf5-q59x"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/security-http/CVE-2026-48489.yaml"
+          }
+        ]
+      },
+      "2": {
+        "advisoryId": "PKSA-tbsf-h7vc-j7hn",
+        "packageName": "symfony/security-http",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12",
+        "title": "CVE-2026-45063: Identity Spoofing via Unanchored DN Regex in X509Authenticator",
+        "cve": "CVE-2026-45063",
+        "link": "https://symfony.com/cve-2026-45063",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-ph86-p8f6-f9r2"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/security-http/CVE-2026-45063.yaml"
+          }
+        ]
+      },
+      "3": {
+        "advisoryId": "PKSA-5df2-zpfk-xgsv",
+        "packageName": "symfony/security-http",
+        "affectedVersions": ">=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12",
+        "title": "CVE-2026-45074: Cas2Handler Derives CAS service URL from Client Host Header \u2192 Cross-Service Ticket Replay",
+        "cve": "CVE-2026-45074",
+        "link": "https://symfony.com/cve-2026-45074",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-j8gj-9rm5-4xhx"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/security-http/CVE-2026-45074.yaml"
+          }
+        ]
+      }
+    }
+  }
+}

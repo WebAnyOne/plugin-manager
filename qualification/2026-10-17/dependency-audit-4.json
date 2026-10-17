@@ -1,0 +1,695 @@
+{
+  "advisories": {
+    "aws/aws-sdk-php": [
+      {
+        "title": "AWS SDK for PHP has CloudFront Policy Document Injection via Special Characters",
+        "cve": null,
+        "link": "https://github.com/advisories/GHSA-27qh-8cxx-2cr5",
+        "reportedAt": "2026-03-27T19:54:58+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-27qh-8cxx-2cr5"
+          }
+        ],
+        "advisoryId": "PKSA-4t1p-xpk2-nsss",
+        "packageName": "aws/aws-sdk-php",
+        "affectedVersions": ">=3.11.7,<=3.371.3"
+      },
+      {
+        "title": "Key Commitment Issues in S3 Encryption Clients",
+        "cve": "CVE-2025-14761",
+        "link": "https://aws.amazon.com/security/security-bulletins/AWS-2025-032/",
+        "reportedAt": "2025-12-17T20:15:00+00:00",
+        "sources": [
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "aws/aws-sdk-php/CVE-2025-14761.yaml"
+          },
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-x8cp-jf6f-r4xh"
+          }
+        ],
+        "advisoryId": "PKSA-dxyf-6n16-t87m",
+        "packageName": "aws/aws-sdk-php",
+        "affectedVersions": ">=3.0.0,<3.368.0"
+      }
+    ],
+    "guzzlehttp/oauth-subscriber": [
+      {
+        "title": "Insufficient nonce entropy",
+        "cve": "CVE-2025-21617",
+        "link": "https://github.com/guzzle/oauth-subscriber/security/advisories/GHSA-237r-r8m4-4q88",
+        "reportedAt": "2025-01-06T19:15:59+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-237r-r8m4-4q88"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "guzzlehttp/oauth-subscriber/CVE-2025-21617.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-pg71-gz29-h5sq",
+        "packageName": "guzzlehttp/oauth-subscriber",
+        "affectedVersions": "<0.8.1"
+      }
+    ],
+    "joomla/filter": [
+      {
+        "title": "Joomla! CMS vulnerable to XSS via the input filter",
+        "cve": "CVE-2025-54476",
+        "link": "https://github.com/advisories/GHSA-fm22-g2q9-j3pw",
+        "reportedAt": "2025-09-30T18:30:24+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-fm22-g2q9-j3pw"
+          }
+        ],
+        "advisoryId": "PKSA-5x9t-bkbj-vmgp",
+        "packageName": "joomla/filter",
+        "affectedVersions": "<2.0.6|>=3.0.0,<3.0.5|=4.0.0"
+      }
+    ],
+    "league/flysystem": [
+      {
+        "title": "Flysystem: WhitespacePathNormalizer's control-character (CorruptedPathDetected) check is bypassed by malformed UTF-8 in the path, affecting every adapter",
+        "cve": "CVE-2026-102601",
+        "link": "https://github.com/advisories/GHSA-cxf4-7mrp-vvpr",
+        "reportedAt": "2026-09-29T18:10:14+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-cxf4-7mrp-vvpr"
+          }
+        ],
+        "advisoryId": "PKSA-w9tt-7782-78jx",
+        "packageName": "league/flysystem",
+        "affectedVersions": "<=3.35.2"
+      }
+    ],
+    "mautic/grapes-js-builder-bundle": [
+      {
+        "title": "GrapesJsBuilder File Upload allows all file uploads",
+        "cve": "CVE-2025-13827",
+        "link": "https://github.com/advisories/GHSA-5xw2-57jx-pgjp",
+        "reportedAt": "2025-12-02T21:11:33+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-5xw2-57jx-pgjp"
+          }
+        ],
+        "advisoryId": "PKSA-71fk-dvg7-c5gr",
+        "packageName": "mautic/grapes-js-builder-bundle",
+        "affectedVersions": ">=6.0.0,<6.0.7|>=5.0.0,<5.2.9|>=4.0.0,<4.4.18"
+      }
+    ],
+    "psy/psysh": [
+      {
+        "title": "PsySH has Local Privilege Escalation via CWD .psysh.php auto-load",
+        "cve": "CVE-2026-25129",
+        "link": "https://github.com/advisories/GHSA-4486-gxhx-5mg7",
+        "reportedAt": "2026-01-30T21:28:44+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-4486-gxhx-5mg7"
+          }
+        ],
+        "advisoryId": "PKSA-4s4z-t146-6123",
+        "packageName": "psy/psysh",
+        "affectedVersions": "<=0.11.22|>=0.12.0,<=0.12.18"
+      }
+    ],
+    "symfony/cache": [
+      {
+        "title": "CVE-2026-45073: SQL Injection in PdoAdapter::doClear() via Unsanitized $prefix",
+        "cve": "CVE-2026-45073",
+        "link": "https://symfony.com/cve-2026-45073",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-6qh9-h6wf-jgqc"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/cache/CVE-2026-45073.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-z7t6-zt6p-wtng",
+        "packageName": "symfony/cache",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      }
+    ],
+    "symfony/expression-language": [
+      {
+        "title": "CVE-2026-109449: Unbounded Nesting in the Expression Parser Lets Untrusted Expressions Crash the Process",
+        "cve": "CVE-2026-109449",
+        "link": "https://symfony.com/cve-2026-109449",
+        "reportedAt": "2026-10-14T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/expression-language/CVE-2026-109449.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-vq1j-sc3k-jzzk",
+        "packageName": "symfony/expression-language",
+        "affectedVersions": ">=2.4.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.54|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.48|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.21|>=8.0.0,<8.1.0|>=8.1.0,<8.1.9"
+      }
+    ],
+    "symfony/http-client": {
+      "1": {
+        "title": "CVE-2024-50342: Internal address and port enumeration allowed by NoPrivateNetworkHttpClient",
+        "cve": "CVE-2024-50342",
+        "link": "https://symfony.com/cve-2024-50342",
+        "reportedAt": "2024-11-13T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-9c3x-r3wp-mgxm"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/http-client/CVE-2024-50342.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-4k7v-pfvw-nqvp",
+        "packageName": "symfony/http-client",
+        "affectedVersions": ">=4.3.0,<4.4.0|>=4.4.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.47|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.15|>=7.0.0,<7.1.0|>=7.1.0,<7.1.8"
+      }
+    },
+    "symfony/http-foundation": {
+      "2": {
+        "title": "CVE-2025-64500: Incorrect parsing of PATH_INFO can lead to limited authorization bypass",
+        "cve": "CVE-2025-64500",
+        "link": "https://symfony.com/blog/cve-2025-64500-incorrect-parsing-of-path-info-can-lead-to-limited-authorization-bypass",
+        "reportedAt": "2025-11-12T11:09:14+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-3rg7-wf37-54rm"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/http-foundation/CVE-2025-64500.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-365x-2zjk-pt47",
+        "packageName": "symfony/http-foundation",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.50|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.29|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.3.7"
+      },
+      "3": {
+        "title": "CVE-2024-50345: Open redirect via browser-sanitized URLs",
+        "cve": "CVE-2024-50345",
+        "link": "https://symfony.com/cve-2024-50345",
+        "reportedAt": "2024-11-05T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-mrqx-rp3w-jpjp"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/http-foundation/CVE-2024-50345.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-b35n-565h-rs4q",
+        "packageName": "symfony/http-foundation",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.46|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.14|>=7.0.0,<7.1.0|>=7.1.0,<7.1.7"
+      }
+    },
+    "symfony/monolog-bridge": [
+      {
+        "title": "CVE-2026-45077: Unauthenticated PHP Object Deserialization in MonologBridge server:log Listener",
+        "cve": "CVE-2026-45077",
+        "link": "https://symfony.com/cve-2026-45077",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-m7v2-7gxm-vc2v"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/monolog-bridge/CVE-2026-45077.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-4wjj-gy1p-ft3r",
+        "packageName": "symfony/monolog-bridge",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      }
+    ],
+    "symfony/process": [
+      {
+        "title": "Symfony's incorrect argument escaping under MSYS2/Git Bash can lead to destructive file operations on Windows",
+        "cve": "CVE-2026-24739",
+        "link": "https://github.com/advisories/GHSA-r39x-jcww-82v6",
+        "reportedAt": "2026-01-28T21:28:10+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-r39x-jcww-82v6"
+          }
+        ],
+        "advisoryId": "PKSA-rkkf-636k-qjb3",
+        "packageName": "symfony/process",
+        "affectedVersions": ">=8.0,<8.0.5|>=7.4,<7.4.5|>=7.3,<7.3.11|>=6.4,<6.4.33|<5.4.51"
+      },
+      {
+        "title": "CVE-2024-51736: Command execution hijack on Windows with Process class",
+        "cve": "CVE-2024-51736",
+        "link": "https://symfony.com/cve-2024-51736",
+        "reportedAt": "2024-11-05T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-qq5c-677p-737q"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/process/CVE-2024-51736.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-wws7-mr54-jsny",
+        "packageName": "symfony/process",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.46|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.14|>=7.0.0,<7.1.0|>=7.1.0,<7.1.7"
+      }
+    ],
+    "symfony/routing": [
+      {
+        "title": "CVE-2026-48784: UrlGenerator Dot-Segment Encoding Skips Every Other Chained `../` or `./` \u2192 Generated URL Collapses Off-Route Under RFC 3986 Normalization",
+        "cve": "CVE-2026-48784",
+        "link": "https://symfony.com/cve-2026-48784",
+        "reportedAt": "2026-05-26T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-h5x3-xfc9-m39h"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/routing/CVE-2026-48784.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-bf7t-jnpz-492k",
+        "packageName": "symfony/routing",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.53|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.41|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.13|>=8.0.0,<8.0.13"
+      },
+      {
+        "title": "CVE-2026-45065: UrlGenerator Route-Requirement Bypass via Unanchored Regex Alternation \u2192 Off-Site //host URL Injection",
+        "cve": "CVE-2026-45065",
+        "link": "https://symfony.com/cve-2026-45065",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-72xp-p242-47p9"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/routing/CVE-2026-45065.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-yc7t-91v9-99xs",
+        "packageName": "symfony/routing",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      }
+    ],
+    "symfony/validator": [
+      {
+        "title": "CVE-2024-50343: Incorrect response from Validator when input ends with `\n`",
+        "cve": "CVE-2024-50343",
+        "link": "https://symfony.com/cve-2024-50343",
+        "reportedAt": "2024-08-30T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-g3rh-rrhp-jhh9"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/validator/CVE-2024-50343.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-w2tw-kmfg-rt9s",
+        "packageName": "symfony/validator",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.43|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.11|>=7.0.0,<7.1.0|>=7.1.0,<7.1.4"
+      }
+    ],
+    "symfony/yaml": [
+      {
+        "title": "CVE-2026-109413: Unbounded Recursion in the YAML Inline Lexer Lets a Single Document Crash the Process",
+        "cve": "CVE-2026-109413",
+        "link": "https://symfony.com/cve-2026-109413",
+        "reportedAt": "2026-08-30T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/yaml/CVE-2026-109413.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-xz3r-9gp4-4m1z",
+        "packageName": "symfony/yaml",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.54|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.45|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.18|>=8.0.0,<8.1.0|>=8.1.0,<8.1.6"
+      },
+      {
+        "title": "CVE-2026-45304: YAML Parser Exponential Memory Allocation via Recursive Collection-Alias Expansion (\"Billion Laughs\")",
+        "cve": "CVE-2026-45304",
+        "link": "https://symfony.com/cve-2026-45304",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-4qpc-3hr4-r2p4"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/yaml/CVE-2026-45304.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-v5yj-8nmz-sk2q",
+        "packageName": "symfony/yaml",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      },
+      {
+        "title": "CVE-2026-45305: YAML Parser ReDoS via Catastrophic Backtracking in Parser::cleanup() Regex",
+        "cve": "CVE-2026-45305",
+        "link": "https://symfony.com/cve-2026-45305",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-9frc-8383-795m"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/yaml/CVE-2026-45305.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-ft77-7h5f-p3r6",
+        "packageName": "symfony/yaml",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      },
+      {
+        "title": "CVE-2026-45133: YAML Parser Stack Exhaustion via Unbounded Recursion in Nested Blocks, Sequences, and Mappings",
+        "cve": "CVE-2026-45133",
+        "link": "https://symfony.com/cve-2026-45133",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-c2p3-7m5p-cv8x"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "symfony/yaml/CVE-2026-45133.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-b14r-zh1d-vdrc",
+        "packageName": "symfony/yaml",
+        "affectedVersions": ">=2.0.0,<3.0.0|>=3.0.0,<4.0.0|>=4.0.0,<5.0.0|>=5.0.0,<5.1.0|>=5.1.0,<5.2.0|>=5.2.0,<5.3.0|>=5.3.0,<5.4.0|>=5.4.0,<5.4.52|>=6.0.0,<6.1.0|>=6.1.0,<6.2.0|>=6.2.0,<6.3.0|>=6.3.0,<6.4.0|>=6.4.0,<6.4.40|>=7.0.0,<7.1.0|>=7.1.0,<7.2.0|>=7.2.0,<7.3.0|>=7.3.0,<7.4.0|>=7.4.0,<7.4.12|>=8.0.0,<8.0.12"
+      }
+    ],
+    "twig/twig": {
+      "0": {
+        "title": "Twig: Sandbox filter, tag and function allow-list bypass when sandbox state changes between renders for a cached `Template`",
+        "cve": "CVE-2026-49981",
+        "link": "https://github.com/advisories/GHSA-529h-vh3j-85hq",
+        "reportedAt": "2026-07-01T18:55:49+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-529h-vh3j-85hq"
+          }
+        ],
+        "advisoryId": "PKSA-8zx5-v2nz-58pb",
+        "packageName": "twig/twig",
+        "affectedVersions": "<=3.26.0"
+      },
+      "1": {
+        "title": "Sandbox property allowlist bypass via the `column` filter under `SourcePolicyInterface`",
+        "cve": "CVE-2026-48808",
+        "link": "https://symfony.com/blog/cve-2026-48808-sandbox-property-allowlist-bypass-via-the-column-filter-under-sourcepolicyinterface",
+        "reportedAt": "2026-05-27T15:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-h8vq-8gpg-mhcg"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-48808.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-fbvq-z33h-r2np",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.27.0"
+      },
+      "2": {
+        "title": "Sandbox state regression in deprecated internal wrappers in `src/Resources/core.php`",
+        "cve": "CVE-2026-48805",
+        "link": "https://symfony.com/blog/cve-2026-48805-sandbox-state-regression-in-deprecated-internal-wrappers-in-src-resources-core-php",
+        "reportedAt": "2026-05-27T15:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-p42q-9prx-q5wq"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-48805.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-g9zw-qxh8-pq8w",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.27.0"
+      },
+      "3": {
+        "title": "Sandbox filter, tag and function allow-list bypass when sandbox state changes between renders",
+        "cve": "CVE-2026-46636",
+        "link": "https://symfony.com/blog/cve-2026-46636-sandbox-filter-tag-and-function-allow-list-bypass-when-sandbox-state-changes-between-renders",
+        "reportedAt": "2026-05-27T15:00:00+00:00",
+        "sources": [
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46636.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-yd6k-t2gh-1m43",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.27.0"
+      },
+      "4": {
+        "title": "Sandbox `__toString()` policy bypass via dynamic mapping keys",
+        "cve": "CVE-2026-48806",
+        "link": "https://symfony.com/blog/cve-2026-48806-sandbox-tostring-policy-bypass-via-dynamic-mapping-keys",
+        "reportedAt": "2026-05-27T15:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-5v5v-ww74-355v"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-48806.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-1tmc-rt7x-12w6",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.27.0"
+      },
+      "5": {
+        "title": "Sandbox `__toString()` policy bypass via `Traversable` in `join`/`replace` and `in`/`not in` operators",
+        "cve": "CVE-2026-48807",
+        "link": "https://symfony.com/blog/cve-2026-48807-sandbox-tostring-policy-bypass-via-traversable-in-join-replace-and-in-not-in-operators",
+        "reportedAt": "2026-05-27T15:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-8x9c-rmqh-456c"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-48807.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-xx6c-6d96-db2w",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.27.0"
+      },
+      "7": {
+        "title": "The `spaceless` filter implicitly marks its output as safe",
+        "cve": "CVE-2026-46628",
+        "link": "https://symfony.com/cve-2026-46628",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-4j38-f5cw-54h7"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46628.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-sjvz-tbbr-vwth",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "8": {
+        "title": "PHP code injection via `{% use %}` template name",
+        "cve": "CVE-2026-46633",
+        "link": "https://symfony.com/cve-2026-46633",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-7p85-w9px-jpjp"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46633.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-h8hf-ytnd-5t9q",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "9": {
+        "title": "XSS in profiler HtmlDumper via unescaped template and profile names",
+        "cve": "CVE-2026-47730",
+        "link": "https://symfony.com/cve-2026-47730",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-2g2g-8p8h-fgwm"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-47730.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-wwb1-81rc-pd65",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=3.0.0,<3.26.0"
+      },
+      "11": {
+        "title": "Sandbox does not protect against resource exhaustion",
+        "cve": "CVE-2026-46627",
+        "link": "https://symfony.com/cve-2026-46627",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46627.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-kvv6-36cr-fkzb",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "12": {
+        "title": "Sandbox property allowlist bypass via the `column` filter (array_column on objects)",
+        "cve": "CVE-2026-46635",
+        "link": "https://symfony.com/cve-2026-46635",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-vcc8-phrv-43wj"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46635.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-n14z-jjjg-g8vd",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "13": {
+        "title": "`{% sandbox %}{% include %}` skips checkSecurity() on cached templates (incomplete fix for CVE-2024-45411)",
+        "cve": "CVE-2026-46638",
+        "link": "https://symfony.com/cve-2026-46638",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-7fxw-r6jv-74c8"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46638.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-3mcc-k66d-pydb",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "14": {
+        "title": "Possible sandbox bypass when using a source policy",
+        "cve": "CVE-2026-24425",
+        "link": "https://symfony.com/cve-2026-24425",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-2q52-x2ff-qgfr"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-24425.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-gw7n-z4yx-7xjt",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=2.16.0,<3.0.0|>=3.9.0,<3.26.0"
+      },
+      "15": {
+        "title": "Sandbox: multiple `__toString()` policy bypasses via unguarded string coercion points",
+        "cve": "CVE-2026-47732",
+        "link": "https://symfony.com/cve-2026-47732",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-pr2w-4gpj-cpq4"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-47732.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-dpx1-78wg-1kqs",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=1.0.0,<2.0.0|>=2.0.0,<3.0.0|>=3.0.0,<3.26.0"
+      },
+      "16": {
+        "title": "`template_from_string()` escapes a SourcePolicy-driven sandbox via synthesized template name",
+        "cve": "CVE-2026-46634",
+        "link": "https://symfony.com/cve-2026-46634",
+        "reportedAt": "2026-05-20T08:00:00+00:00",
+        "sources": [
+          {
+            "name": "GitHub",
+            "remoteId": "GHSA-24x9-r6q4-q93w"
+          },
+          {
+            "name": "FriendsOfPHP/security-advisories",
+            "remoteId": "twig/twig/CVE-2026-46634.yaml"
+          }
+        ],
+        "advisoryId": "PKSA-21g2-dzjv-sky5",
+        "packageName": "twig/twig",
+        "affectedVersions": ">=3.9.0,<3.26.0"
+      }
+    }
+  }
+}

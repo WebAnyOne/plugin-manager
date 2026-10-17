@@ -1,0 +1,36 @@
+name: Core and security tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: sodium, curl, zip, mbstring, pdo_mysql
+          tools: composer:v2
+      - name: Install isolated test dependency
+        run: |
+          mkdir -p /tmp/wao-core-deps
+          composer require --working-dir=/tmp/wao-core-deps composer/semver:^3 --no-plugins --no-scripts --no-interaction
+      - name: Validate metadata and syntax
+        run: |
+          composer validate --strict --no-check-publish
+          find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n 1 php -l
+      - name: Test signed catalogue, policy, queue and consent
+        env:
+          MAUTIC_AUTOLOAD: /tmp/wao-core-deps/vendor/autoload.php
+        run: php Tests/unit.php
+      - name: Test metrics and independent process supervisor
+        run: |
+          python3 Tests/metrics.py
+          python3 Tests/process-guard.py
+          python3 Tests/concurrency.py

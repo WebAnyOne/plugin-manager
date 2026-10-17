@@ -1,0 +1,11 @@
+{
+  "suite": "unit-security",
+  "php": "7.4.33",
+  "assertions": 20055,
+  "rollout_sample": [
+    484,
+    2443,
+    10000
+  ],
+  "status": "passed"
+}

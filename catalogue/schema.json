@@ -1,0 +1,439 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "issued_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/plugin"
+      },
+      "maxItems": 200
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "support": {
+          "type": "string"
+        },
+        "service": {
+          "type": "string"
+        },
+        "newsletter_fr": {
+          "type": "string"
+        },
+        "newsletter_en": {
+          "type": "string"
+        },
+        "privacy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "support",
+        "service",
+        "newsletter_fr",
+        "newsletter_en",
+        "privacy"
+      ],
+      "additionalProperties": false
+    },
+    "next_keys": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "maxLength": 100
+      }
+    },
+    "revoked_keys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "sequence",
+    "issued_at",
+    "expires_at",
+    "plugins",
+    "links",
+    "next_keys",
+    "revoked_keys"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "plugin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "package": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_.-]*/[a-z0-9][a-z0-9_.-]*$"
+        },
+        "bundle": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9]*Bundle$"
+        },
+        "author": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string"
+        },
+        "github": {
+          "type": "string"
+        },
+        "packagist": {
+          "type": "string"
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "fr": {
+              "type": "string",
+              "maxLength": 6000
+            },
+            "en": {
+              "type": "string",
+              "maxLength": 6000
+            }
+          },
+          "required": [
+            "fr",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fr": {
+                "type": "string",
+                "maxLength": 6000
+              },
+              "en": {
+                "type": "string",
+                "maxLength": 6000
+              }
+            },
+            "required": [
+              "fr",
+              "en"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "category": {
+          "type": "string"
+        },
+        "screenshots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "documentation": {
+          "type": "object",
+          "properties": {
+            "fr": {
+              "type": "string",
+              "maxLength": 6000
+            },
+            "en": {
+              "type": "string",
+              "maxLength": 6000
+            }
+          },
+          "required": [
+            "fr",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "recommended": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "blocked_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+            "maxLength": 32
+          }
+        },
+        "releases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+                "maxLength": 32
+              },
+              "mautic": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "php": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_]+$"
+                }
+              },
+              "dependencies": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "conflicts": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "certifications": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "mautic": {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+                      "maxLength": 32
+                    },
+                    "php": {
+                      "type": "string",
+                      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+                      "maxLength": 32
+                    },
+                    "dependencies": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      }
+                    },
+                    "result": {
+                      "type": "string",
+                      "enum": [
+                        "passed",
+                        "failed"
+                      ]
+                    },
+                    "report_url": {
+                      "type": "string"
+                    },
+                    "report_sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "qualified_at": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "required": [
+                    "mautic",
+                    "php",
+                    "dependencies",
+                    "result",
+                    "report_url",
+                    "report_sha256",
+                    "qualified_at"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "artifact": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "reference": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  }
+                },
+                "required": [
+                  "url",
+                  "sha256",
+                  "reference"
+                ],
+                "additionalProperties": false
+              },
+              "rollout": {
+                "type": "object",
+                "properties": {
+                  "percentage": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "campaign": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64
+                  },
+                  "opens_at": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "expand_after": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "active",
+                      "suspended",
+                      "blocked"
+                    ]
+                  }
+                },
+                "required": [
+                  "percentage",
+                  "campaign",
+                  "opens_at",
+                  "expand_after",
+                  "state"
+                ],
+                "additionalProperties": false
+              },
+              "published_at": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "changelog": {
+                "type": "object",
+                "properties": {
+                  "fr": {
+                    "type": "string",
+                    "maxLength": 6000
+                  },
+                  "en": {
+                    "type": "string",
+                    "maxLength": 6000
+                  }
+                },
+                "required": [
+                  "fr",
+                  "en"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "version",
+              "mautic",
+              "php",
+              "extensions",
+              "dependencies",
+              "conflicts",
+              "certifications",
+              "artifact",
+              "rollout",
+              "published_at",
+              "changelog"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "adoption": {
+          "type": "object",
+          "properties": {
+            "representative": {
+              "type": "boolean"
+            },
+            "observed_active": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "successful_operations": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "at": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "representative"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "package",
+        "bundle",
+        "author",
+        "license",
+        "github",
+        "packagist",
+        "description",
+        "features",
+        "category",
+        "screenshots",
+        "documentation",
+        "recommended",
+        "blocked_versions",
+        "releases",
+        "adoption"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

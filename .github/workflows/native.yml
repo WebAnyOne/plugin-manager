@@ -1,0 +1,59 @@
+name: Native Mautic laboratory integration (not deployment certification)
+on: [workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - mautic: '4.4.13'
+            php: '7.4'
+          - mautic: '5.2.11'
+            php: '8.1'
+          - mautic: '5.2.11'
+            php: '8.3'
+          - mautic: '6.0.9'
+            php: '8.1'
+          - mautic: '6.0.9'
+            php: '8.3'
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: laboratory-only
+          MYSQL_DATABASE: apimonitor_lab_manager_ci
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -plaboratory-only"
+          --health-interval=10s --health-timeout=5s --health-retries=15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: sodium, curl, zip, mbstring, pdo_mysql, intl, imap, gd, bcmath
+          tools: composer:v2
+      - name: Prepare disposable native distribution
+        env:
+          MAUTIC_VERSION: ${{ matrix.mautic }}
+        run: |
+          mkdir -p /tmp/manager-native
+          curl --fail --location --proto '=https' "https://github.com/mautic/mautic/releases/download/${MAUTIC_VERSION}/${MAUTIC_VERSION}.zip" -o /tmp/mautic.zip
+          unzip -q /tmp/mautic.zip -d /tmp/manager-native
+          mkdir -p /tmp/manager-native/plugins/WebAnyOnePluginManagerBundle
+          cp -R . /tmp/manager-native/plugins/WebAnyOnePluginManagerBundle/
+          php -d memory_limit=1G /tmp/manager-native/bin/console mautic:install https://mautic.example.invalid --db_driver=pdo_mysql --db_host=127.0.0.1 --db_port=3306 --db_name=apimonitor_lab_manager_ci --db_user=root --db_password=laboratory-only --admin_firstname=Disposable --admin_lastname=Test --admin_username=manager-admin --admin_email=admin@example.invalid --admin_password=Disposable-CI-Password-Only --force
+      - name: Verify native services, routes, views, permissions and API guards
+        run: php -d memory_limit=1G Tests/integration.php /tmp/manager-native > native-report.json
+      - name: Require actual JSON success report
+        run: python3 -c "import json; r=json.load(open('native-report.json')); assert r['status']=='passed' and r['assertions']>=100"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-${{ matrix.mautic }}-php-${{ matrix.php }}
+          path: native-report.json

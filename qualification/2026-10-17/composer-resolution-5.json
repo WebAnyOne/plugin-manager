@@ -1,0 +1,21 @@
+{
+  "suite": "clean-composer-resolution",
+  "mautic": "5.2.11",
+  "php": "8.1.31",
+  "status": "passed",
+  "steps": [
+    {
+      "stage": "scaffold",
+      "exit_code": 0,
+      "duration_seconds": 2.21,
+      "evidence": "composer-5-scaffold.log"
+    },
+    {
+      "stage": "resolution",
+      "exit_code": 0,
+      "duration_seconds": 33.29,
+      "evidence": "composer-5-resolution.log"
+    }
+  ],
+  "scope": "Dependency resolution only; no installation, plugin scripts, deployment or restoration executed."
+}

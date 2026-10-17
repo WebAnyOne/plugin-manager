@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "sequence": 0,
+  "issued_at": 0,
+  "expires_at": 0,
+  "plugins": [
+    {
+      "id": "mautic-form-routing",
+      "name": "WebAnyOne Form Routing",
+      "package": "webanyone/mautic-form-routing",
+      "bundle": "WebAnyOneFormRoutingBundle",
+      "author": "WebAnyOne",
+      "license": "GPL-3.0-or-later",
+      "github": "https://github.com/WebAnyOne/mautic-form-routing",
+      "packagist": "https://packagist.org/packages/webanyone/mautic-form-routing",
+      "description": {
+        "fr": "Routage des notifications internes selon les réponses aux formulaires Mautic.",
+        "en": "Route internal notifications according to Mautic form answers."
+      },
+      "features": [],
+      "category": "Mautic",
+      "screenshots": [],
+      "documentation": {
+        "fr": "https://github.com/WebAnyOne/mautic-form-routing",
+        "en": "https://github.com/WebAnyOne/mautic-form-routing"
+      },
+      "recommended": "",
+      "blocked_versions": [],
+      "releases": [],
+      "adoption": {
+        "representative": false
+      }
+    },
+    {
+      "id": "mautic-media-manager-bundle",
+      "name": "WebAnyOne Media Manager",
+      "package": "webanyone/mautic-media-manager-bundle",
+      "bundle": "WebAnyOneMediaManagerBundle",
+      "author": "WebAnyOne",
+      "license": "GPL-3.0-or-later",
+      "github": "https://github.com/WebAnyOne/mautic-media-manager",
+      "packagist": "https://packagist.org/packages/webanyone/mautic-media-manager-bundle",
+      "description": {
+        "fr": "Galerie d’images partagée pour les éditeurs Mautic.",
+        "en": "Shared image gallery for Mautic editors."
+      },
+      "features": [],
+      "category": "Mautic",
+      "screenshots": [],
+      "documentation": {
+        "fr": "https://github.com/WebAnyOne/mautic-media-manager",
+        "en": "https://github.com/WebAnyOne/mautic-media-manager"
+      },
+      "recommended": "",
+      "blocked_versions": [],
+      "releases": [],
+      "adoption": {
+        "representative": false
+      }
+    },
+    {
+      "id": "mautic-commerce-bundle",
+      "name": "WebAnyOne Commerce",
+      "package": "webanyone/mautic-commerce-bundle",
+      "bundle": "WebAnyOneCommerceBundle",
+      "author": "WebAnyOne",
+      "license": "GPL-3.0",
+      "github": "https://github.com/WebAnyOne/MauticEcommerceBundle",
+      "packagist": "https://packagist.org/packages/webanyone/mautic-commerce-bundle",
+      "description": {
+        "fr": "Intégration de données e-commerce dans Mautic.",
+        "en": "E-commerce data integration for Mautic."
+      },
+      "features": [],
+      "category": "Mautic",
+      "screenshots": [],
+      "documentation": {
+        "fr": "https://github.com/WebAnyOne/MauticEcommerceBundle",
+        "en": "https://github.com/WebAnyOne/MauticEcommerceBundle"
+      },
+      "recommended": "",
+      "blocked_versions": [],
+      "releases": [],
+      "adoption": {
+        "representative": false
+      }
+    }
+  ],
+  "links": {
+    "support": "https://webanyone.net",
+    "service": "https://webanyone.net",
+    "newsletter_fr": "",
+    "newsletter_en": "",
+    "privacy": "https://webanyone.net"
+  },
+  "next_keys": {},
+  "revoked_keys": []
+}

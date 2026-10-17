@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "incomplete",
+  "plugin": "webanyone/mautic-plugin-manager",
+  "plugin_version": "0.1.0-dev",
+  "source_commit": "",
+  "mautic": "",
+  "php": "",
+  "dependencies": {},
+  "checks": {
+    "composer_resolution": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "initial_install": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "native_reload": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "service_registration": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "routes": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "permissions": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "schema_create_update": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "essential_features": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "upgrade_previous": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "disable_resume": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "critical_log_absence": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "coexistence": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "failure_recovery": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    },
+    "plesk": {
+      "status": "pending",
+      "evidence": "",
+      "sha256": ""
+    }
+  }
+}

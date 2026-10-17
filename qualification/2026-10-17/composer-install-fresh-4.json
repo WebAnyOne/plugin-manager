@@ -1,0 +1,10 @@
+{
+  "suite": "clean-composer-install",
+  "mautic": "4.4.13",
+  "php": "7.4.33",
+  "exit_code": 0,
+  "status": "passed",
+  "duration_seconds": 26.47,
+  "installed_in_native_bundle_path": true,
+  "scope": "Composer installation of Manager and native dependencies into a disposable recommended-project, no production instance and no schema migrations."
+}

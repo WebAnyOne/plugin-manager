@@ -1,0 +1,57 @@
+{
+  "suite": "native-http-firewall",
+  "major": "4",
+  "php": "7.4.33",
+  "cases": [
+    {
+      "identity": "anonymous",
+      "path": "catalogue",
+      "method": "GET",
+      "expected": 401,
+      "observed": 401
+    },
+    {
+      "identity": "invalid",
+      "path": "catalogue",
+      "method": "GET",
+      "expected": 401,
+      "observed": 401
+    },
+    {
+      "identity": "admin",
+      "path": "catalogue",
+      "method": "GET",
+      "expected": 200,
+      "observed": 200
+    },
+    {
+      "identity": "admin",
+      "path": "diagnostic",
+      "method": "GET",
+      "expected": 200,
+      "observed": 200
+    },
+    {
+      "identity": "limited",
+      "path": "catalogue",
+      "method": "GET",
+      "expected": 403,
+      "observed": 403
+    },
+    {
+      "identity": "admin",
+      "path": "jobs",
+      "method": "POST",
+      "expected": 400,
+      "observed": 400
+    },
+    {
+      "identity": "admin",
+      "path": "settings",
+      "method": "PATCH",
+      "expected": 200,
+      "observed": 200
+    }
+  ],
+  "status": "passed"
+}

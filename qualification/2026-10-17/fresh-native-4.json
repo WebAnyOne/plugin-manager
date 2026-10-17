@@ -1,0 +1,10 @@
+{
+  "suite": "native-integration",
+  "mautic": "4.4.13",
+  "php": "7.4.33",
+  "assertions": 102,
+  "views": 20,
+  "composer_project": "/private/tmp/wao-manager-resolution/4/project",
+  "status": "passed",
+  "scope": "Fresh recommended-project, Manager installed by Composer, new disposable database, native kernel and UI/API-guard integration."
+}

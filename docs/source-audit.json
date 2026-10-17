@@ -1,0 +1,77 @@
+[
+  {
+    "lab": "4",
+    "path": "app/AppKernel.php",
+    "sha256": "a59a513a71b5ae89b2b3f1a7153994a24771b50098ac22b5700f7ce82aa0d729"
+  },
+  {
+    "lab": "4",
+    "path": "app/bundles/PluginBundle/Bundle/PluginBundleBase.php",
+    "sha256": "90bb4a242094840487e1b24e418ad787336659e2f10627951ab51b38ac4e4a17"
+  },
+  {
+    "lab": "4",
+    "path": "app/bundles/MarketplaceBundle/Config/config.php",
+    "sha256": "7c7ca8384d76c90f5d2414aded8270f162b8c6c71f4750a418c2af6f0f05e2ec"
+  },
+  {
+    "lab": "4",
+    "path": "app/bundles/CoreBundle/Helper/ComposerHelper.php",
+    "sha256": "520d36082c9ae9ea402f1e80d31424cb96874974934cbf0156009d5cf354ea57"
+  },
+  {
+    "lab": "4",
+    "path": "app/bundles/ApiBundle/Security/OAuth2/Firewall/OAuthListener.php",
+    "sha256": "a0c089792550dcbf3cc276ca382fd1a9fc77f264cf2bf27be760d5754996fb8a"
+  },
+  {
+    "lab": "5",
+    "path": "app/AppKernel.php",
+    "sha256": "787f08cc59a89b724797d6636f976e403cd577033f87cfe79963928448e22b11"
+  },
+  {
+    "lab": "5",
+    "path": "app/bundles/PluginBundle/Bundle/PluginBundleBase.php",
+    "sha256": "1636e7b2a6c7cf65751f837bfabd75dc55d5af192ac8a0b89669b37ce8027aa0"
+  },
+  {
+    "lab": "5",
+    "path": "app/bundles/MarketplaceBundle/Config/config.php",
+    "sha256": "cc66b904ae7ad39d56ad2845626a2e9b83dbdc5785ff11f8c55260aaeb8ce9f8"
+  },
+  {
+    "lab": "5",
+    "path": "app/bundles/CoreBundle/Helper/ComposerHelper.php",
+    "sha256": "746827790f671ef83cc47f692057dc4d38721f767a3c6334c5da554916bc3cf7"
+  },
+  {
+    "lab": "5",
+    "path": "app/bundles/ApiBundle/Security/OAuth2/Firewall/OAuthListener.php",
+    "sha256": "3d34e4977bcd7a6072432d091897b6b8aa5bf2c35fc65833bfb14d94503cb1d9"
+  },
+  {
+    "lab": "6",
+    "path": "app/AppKernel.php",
+    "sha256": "4a82c998ae4dba0c6e0960b40adbcb58b682209d35588daeae16b0cca5aed8a0"
+  },
+  {
+    "lab": "6",
+    "path": "app/bundles/PluginBundle/Bundle/PluginBundleBase.php",
+    "sha256": "a2500e144147c08d4a7551b54e6951b37e12998497494e16e18f24e4cc054dda"
+  },
+  {
+    "lab": "6",
+    "path": "app/bundles/MarketplaceBundle/Config/config.php",
+    "sha256": "cc66b904ae7ad39d56ad2845626a2e9b83dbdc5785ff11f8c55260aaeb8ce9f8"
+  },
+  {
+    "lab": "6",
+    "path": "app/bundles/CoreBundle/Helper/ComposerHelper.php",
+    "sha256": "857bf2c32b2095e14356e17a1afbb53fd4b098dea717d5fec75232bee6b310fa"
+  },
+  {
+    "lab": "6",
+    "path": "app/bundles/ApiBundle/Security/OAuth2/Firewall/OAuthListener.php",
+    "sha256": "3d34e4977bcd7a6072432d091897b6b8aa5bf2c35fc65833bfb14d94503cb1d9"
+  }
+]

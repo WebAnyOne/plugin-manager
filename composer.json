@@ -1,0 +1,46 @@
+{
+  "name": "webanyone/mautic-plugin-manager",
+  "description": "WebAnyOne Plugin Manager \u2014 certified catalogue and asynchronous Composer operations for Mautic.",
+  "type": "mautic-plugin",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "WebAnyOne",
+      "homepage": "https://webanyone.net"
+    }
+  ],
+  "keywords": [
+    "mautic",
+    "plugin",
+    "composer"
+  ],
+  "require": {
+    "php": ">=7.4 <8.4",
+    "ext-json": "*",
+    "ext-sodium": "*",
+    "ext-curl": "*",
+    "ext-zip": "*",
+    "mautic/core-lib": "4.4.13 || 5.2.11 || 6.0.9",
+    "composer/semver": "^3.2",
+    "symfony/process": "^4.4 || ^5.4 || ^6.4",
+    "ext-posix": "*",
+    "ext-mbstring": "*",
+    "ext-pdo_mysql": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MauticPlugin\\WebAnyOnePluginManagerBundle\\": ""
+    }
+  },
+  "extra": {
+    "install-directory-name": "WebAnyOnePluginManagerBundle"
+  },
+  "scripts": {
+    "test": "@php Tests/unit.php"
+  },
+  "homepage": "https://github.com/WebAnyOne/plugin-manager",
+  "support": {
+    "issues": "https://github.com/WebAnyOne/plugin-manager/issues",
+    "source": "https://github.com/WebAnyOne/plugin-manager"
+  }
+}

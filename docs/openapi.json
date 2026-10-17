@@ -1,0 +1,645 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "WebAnyOne Plugin Manager",
+    "version": "0.1.0-dev",
+    "description": "Development contract; never pass Composer commands or repository URLs. An accepted job is not a successful installation.",
+    "license": {
+      "name": "GPL-3.0-only"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api"
+    }
+  ],
+  "paths": {
+    "/webanyone/plugins/catalogue": {
+      "get": {
+        "summary": "Certified and fresh approved releases",
+        "description": "Requires Mautic permission view.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Certified and fresh approved releases",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalogue"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          }
+        }
+      }
+    },
+    "/webanyone/plugins/installed": {
+      "get": {
+        "summary": "Observed local inventory",
+        "description": "Requires Mautic permission view.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Observed local inventory",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          }
+        }
+      }
+    },
+    "/webanyone/plugins/diagnostic": {
+      "get": {
+        "summary": "Sanitized technical diagnostics",
+        "description": "Requires Mautic permission view.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sanitized technical diagnostics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Diagnostic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          }
+        }
+      }
+    },
+    "/webanyone/plugins/settings": {
+      "get": {
+        "summary": "Read functional settings",
+        "description": "Requires Mautic permission view + configure.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read functional settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Settings"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Change settings; revocation purges telemetry outbox",
+        "description": "Requires Mautic permission view + configure.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Change settings; revocation purges telemetry outbox",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Settings"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          },
+          "400": {
+            "description": "Invalid body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Operation blocked or conflicting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Settings"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webanyone/plugins/jobs": {
+      "get": {
+        "summary": "Latest 100 operations",
+        "description": "Requires Mautic permission view.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Latest 100 operations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "jobs": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Job"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          }
+        }
+      },
+      "post": {
+        "summary": "Queue or return an idempotent asynchronous request",
+        "description": "Requires Mautic permission view + install or update.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Queue or return an idempotent asynchronous request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "job": {
+                      "$ref": "#/components/schemas/Job"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          },
+          "400": {
+            "description": "Invalid body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Operation blocked or conflicting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Operation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webanyone/plugins/jobs/{id}": {
+      "get": {
+        "summary": "Read operation status",
+        "description": "Requires Mautic permission view.",
+        "security": [
+          {
+            "mauticOAuth2": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Read operation status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "job": {
+                      "$ref": "#/components/schemas/Job"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "OAuth2 authentication required"
+          },
+          "403": {
+            "description": "Permission denied"
+          },
+          "500": {
+            "description": "Internal failure; no raw secrets returned"
+          },
+          "404": {
+            "description": "No matching job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "mauticOAuth2": {
+        "type": "oauth2",
+        "description": "Native Mautic OAuth2; browser sessions and Basic authentication are refused.",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "/oauth/v2/auth",
+            "tokenUrl": "/oauth/v2/token",
+            "scopes": {}
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Operation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "plugin",
+          "version",
+          "operation",
+          "idempotency_key"
+        ],
+        "properties": {
+          "plugin": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$"
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "install",
+              "update"
+            ]
+          },
+          "idempotency_key": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{16,128}$"
+          }
+        }
+      },
+      "Settings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "consent": {
+            "type": "boolean",
+            "default": false
+          },
+          "auto_patch": {
+            "type": "boolean",
+            "default": true
+          },
+          "notifications": {
+            "type": "boolean",
+            "default": true
+          },
+          "check_hours": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 168,
+            "default": 24
+          }
+        }
+      },
+      "Job": {
+        "type": "object",
+        "required": [
+          "id",
+          "plugin",
+          "version",
+          "operation",
+          "status",
+          "phase",
+          "created_at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$"
+          },
+          "plugin": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "install",
+              "update"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "recovery_required",
+              "restored",
+              "expired"
+            ]
+          },
+          "phase": {
+            "type": "string"
+          },
+          "user": {
+            "type": "integer"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "ui",
+              "api",
+              "automation"
+            ]
+          },
+          "created_at": {
+            "type": "integer"
+          },
+          "expires_at": {
+            "type": "integer"
+          },
+          "started_at": {
+            "type": "integer",
+            "nullable": true
+          },
+          "finished_at": {
+            "type": "integer",
+            "nullable": true
+          },
+          "mutated": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "at": {
+                  "type": "integer"
+                },
+                "result": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "Catalogue": {
+        "type": "object",
+        "properties": {
+          "plugins": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "fresh": {
+            "type": "boolean"
+          },
+          "synced_at": {
+            "type": "integer",
+            "nullable": true
+          }
+        }
+      },
+      "Inventory": {
+        "type": "object",
+        "properties": {
+          "plugins": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "health": {
+                  "type": "string",
+                  "enum": [
+                    "healthy",
+                    "warning",
+                    "error",
+                    "unknown"
+                  ]
+                },
+                "issues": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "available": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "integer",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "Diagnostic": {
+        "type": "object",
+        "properties": {
+          "manager": {
+            "type": "string"
+          },
+          "mautic": {
+            "type": "string"
+          },
+          "php": {
+            "type": "string"
+          },
+          "checks": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean"
+            }
+          },
+          "plugins": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "dependencies": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "recent_failures": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  }
+}

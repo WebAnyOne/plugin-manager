@@ -1,0 +1,8 @@
+{
+  "suite": "dependency-audit",
+  "mautic": "5.2.11",
+  "exit_code": 0,
+  "advisory_count": 0,
+  "affected_packages": 0,
+  "abandoned_packages": 0
+}

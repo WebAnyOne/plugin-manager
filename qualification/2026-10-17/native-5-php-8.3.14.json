@@ -1,0 +1,9 @@
+{
+  "suite": "native-integration",
+  "mautic": "5.2.11",
+  "php": "8.3.14",
+  "assertions": 102,
+  "views": 20,
+  "composer_project": "/private/tmp/apim-lab/5",
+  "status": "passed"
+}

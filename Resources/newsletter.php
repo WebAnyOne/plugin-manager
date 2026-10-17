@@ -1,0 +1,5 @@
+<?php if (!isset($language,$e,$t,$links)) { exit; } ?>
+<p><?= $e($t('newsletter_explanation')) ?></p>
+<form method="get" action="<?= $e($url('wao_manager_index')) ?>"><?= $input('tab',$tab) ?><div class="form-group"><label for="wao-language"><?= $e($t('language')) ?></label><select id="wao-language" class="form-control" name="language"><option value="fr" <?= $language==='fr' ? 'selected' : '' ?>>Français</option><option value="en" <?= $language==='en' ? 'selected' : '' ?>>English</option></select></div><button class="btn btn-default" type="submit"><?= $e($t('choose')) ?></button></form>
+<?php $form=$links['newsletter_'.$language];if ($form): ?><p class="mt-md"><a class="btn btn-primary" href="<?= $e($form) ?>" target="_blank" rel="noopener noreferrer"><?= $e($t('subscribe')) ?> — WebAnyOne Plugins <?= $e(strtoupper($language)) ?></a></p><p><?= $e($t('newsletter_confirmation')) ?></p><?php else: ?><div class="alert alert-info mt-md"><?= $e($t('newsletter_unavailable')) ?></div><?php endif ?>
+<p><a href="<?= $e($links['privacy']) ?>" target="_blank" rel="noopener noreferrer"><?= $e($t('privacy')) ?></a></p>

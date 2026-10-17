@@ -1,0 +1,9 @@
+{
+  "suite": "native-integration",
+  "mautic": "4.4.13",
+  "php": "7.4.33",
+  "assertions": 102,
+  "views": 20,
+  "composer_project": null,
+  "status": "passed"
+}

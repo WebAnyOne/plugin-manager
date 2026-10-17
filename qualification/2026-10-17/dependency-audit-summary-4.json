@@ -1,0 +1,8 @@
+{
+  "suite": "dependency-audit",
+  "mautic": "4.4.13",
+  "exit_code": 16,
+  "advisory_count": 37,
+  "affected_packages": 16,
+  "abandoned_packages": 0
+}

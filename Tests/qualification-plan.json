@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "required_checks": [
+    "composer_resolution",
+    "initial_install",
+    "native_reload",
+    "service_registration",
+    "routes",
+    "permissions",
+    "schema_create_update",
+    "essential_features",
+    "upgrade_previous",
+    "disable_resume",
+    "critical_log_absence",
+    "coexistence",
+    "failure_recovery",
+    "plesk"
+  ],
+  "policy": "A release is certified only when all checks have passed for the exact plugin version, Mautic version, PHP version and relevant dependency versions. An incomplete report never authorizes installation."
+}

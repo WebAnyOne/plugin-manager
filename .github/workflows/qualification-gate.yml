@@ -1,0 +1,21 @@
+name: Release qualification evidence gate
+on: [workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  qualification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Require complete immutable reports for a release
+        run: |
+          test -d qualification/releases
+          found=0
+          for report in qualification/releases/*.json; do
+            test -f "$report" || continue
+            found=1
+            python3 tools/verify-qualification.py "$report"
+          done
+          test "$found" = 1
