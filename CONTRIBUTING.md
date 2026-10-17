@@ -6,6 +6,8 @@ Le cœur reste compatible avec la syntaxe PHP 7.4. Utiliser les services Mautic/
 
 Exécuter `Tests/unit.php` avec `MAUTIC_AUTOLOAD` pointant sur l'autoload d'une instance Mautic (ou un autoload contenant composer/semver). Exécuter `Tests/metrics.py` et `Tests/process-guard.py` et `Tests/concurrency.py`. Les tests natifs doivent utiliser une instance jetable et une base nommée `apimonitor_lab_*` ; ils refusent une autre base avant toute mutation de test. Installer le bundle dans son dossier natif puis lancer `Tests/integration.php /chemin/instance`. Vérifier les rendus FR/EN. Ne pas inclure les configs locales, bases, secrets, clés privées ou données de clients dans Git.
 
+Le test `Tests/recovery.php /chemin/instance` appelle la récupération native avec un petit projet temporaire et une base MySQL isolée ; il nécessite le droit de créer/supprimer une base `apimonitor_lab_pm_recovery_*`. Voir [le protocole et les limites du fournisseur de test](docs/RECOVERY.md). Ne pas installer ce fournisseur sur une instance réelle.
+
 Les tests CI du socle et les tests natifs ne certifient pas à eux seuls le déploiement. Une certification ajoute résolution Composer propre, installation/update, schéma, désactivation/reprise, cas d'échec, restauration et coexistence. Joindre les rapports de qualification plutôt qu'élargir une contrainte par numéro majeur.
 
 Les changements du schéma de catalogue nécessitent des cas de refus adverses et un validateur runtime correspondant. Toute rotation de clé doit conserver une chaîne de confiance et une procédure pour les clients restés hors ligne. Les correctifs automatiques sont exclusivement sémantiques patch, certifiés, non bloqués et éligibles à leur campagne.

@@ -1,0 +1,7 @@
+{
+  "suite": "process-supervisor",
+  "assertions": 7,
+  "status": "passed",
+  "php": "7.4.33",
+  "scope": "Independent supervisor with stdout/stderr pipes closed by parent termination"
+}

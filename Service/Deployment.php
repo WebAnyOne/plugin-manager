@@ -44,8 +44,7 @@ final class Deployment
     }
     private function guarded(array $argv,string $cwd,int $timeout,array $env=[]): void
     {
-        $runner=__DIR__.'/../bin/run-guarded.php';
-        $this->process->run([PHP_BINARY,$runner,$this->state->dir(),$cwd,base64_encode(json_encode($argv,JSON_THROW_ON_ERROR)),(string)$timeout],$cwd,$timeout+10,$env);
+        $this->process->guarded($argv,$cwd,$timeout,$this->state->dir(),$env);
     }
     public function execute(array $job,array $plugin,array $release,callable $revalidate): void
     {

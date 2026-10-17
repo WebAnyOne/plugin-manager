@@ -4,6 +4,8 @@ Open-source Mautic plugin manager with signed catalogues, exact compatibility ce
 
 **Development build, not production-qualified.** Native integration is checked only against the exact Mautic/PHP tuples in [the qualification report](docs/QUALIFICATION.md). Initial Composer installation of the Manager is verified on three fresh instances. Deployment of other plugins, coherent restoration and representative Plesk hosting remain unqualified. The initial signed catalogue has no certified plugin releases.
 
+Native recovery tests cover tiny isolated code and MySQL fixtures on Mautic 4/5/6, including parent termination and failed recovery checks. They do not qualify restoration of a complete Mautic installation. No Plesk test host is available.
+
 Install using Composer only in a disposable Composer-managed Mautic project. Before Packagist publication:
 
 ```sh

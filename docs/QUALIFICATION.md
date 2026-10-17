@@ -27,7 +27,17 @@ Sur chaque ligne, les tests couvrent chargement du bundle, découverte des servi
 - Six processus concurrents réalisent 240 écritures sans perte et obtiennent un seul job pour la même clé d'idempotence.
 - Le superviseur garde son verrou après interruption du parent, refuse une opération concurrente et laisse reprendre après la fin de l'enfant. Timeout et codes de sortie testés.
 - Réducteur de métriques : mises à jour distinctes des nouvelles instances, événements dédupliqués, silence non assimilé à une désinstallation.
-- Syntaxe des 37 fichiers PHP vérifiée sur les trois interpréteurs ; métadonnées Composer validées avec `--strict`.
+- Syntaxe des 39 fichiers PHP vérifiée sur les trois interpréteurs ; métadonnées Composer validées avec `--strict`.
+
+## Récupération locale sur fixtures
+
+La suite `Tests/recovery.php` utilise le kernel natif et la méthode réelle `Manager::recover` sur les trois projets Composer vierges : Mautic 4.4.13 / PHP 7.4.33, 5.2.11 / PHP 8.1.31 et 6.0.9 / PHP 8.3.14. Chaque exécution couvre 31 assertions sur un petit projet temporaire et une base MySQL distincte à table unique, supprimés à la fin. Elle ne modifie pas les enregistrements Mautic.
+
+Les scénarios couvrent : aller-retour initial de sauvegarde/restauration réellement exécuté avant d'enregistrer la date de test ; expiration de cette date ; incident après modification des fichiers, du schéma et des données ; échec de restauration ; échec de vérification ; point de restauration incorrect ; sauvegarde corrompue ; arrêt brutal du parent ; refus d'une récupération concurrente ; reprise explicite et déblocage de la file seulement après restauration vérifiée. Les preuves sont `native-recovery-4.json`, `native-recovery-5.json` et `native-recovery-6.json`.
+
+Ces essais ont conduit à protéger aussi les fournisseurs par le superviseur indépendant. Le test du superviseur reproduit désormais un enfant qui écrit sur stdout/stderr après la mort du parent ; la gestion des canaux fermés évite les notices de pipe cassé et permet le nettoyage de la métadonnée sous PHP 8.3.
+
+**Limite :** les fichiers et dépendances sont des fixtures, le schéma contient une table, et aucune écriture concurrente n'est autorisée. Il ne s'agit ni d'une restauration complète de Mautic, ni d'un déploiement Composer d'un plugin certifié. Le fournisseur de test ne peut pas servir en production. Aucun environnement Plesk n'est disponible ; le critère `plesk` reste obligatoire et non validé.
 
 ## Résolution et sécurité des graphes obtenus
 
@@ -50,7 +60,7 @@ Ces nombres concernent les **locks obtenus le jour du test**, pas tous les dépl
 | C — déploiements | Moteur implémenté et gardes testées ; déploiement réel d'un plugin certifié et rollback cohérent non qualifiés |
 | D — API | Contrat et endpoints implémentés ; firewall natif vérifié ; cycle de job de déploiement accepté puis réussi encore à qualifier |
 | E — communauté | Interface, consentement, file, métriques et courrier natif implémentés ; collecteur, formulaires newsletter et transport e-mail réel à valider |
-| F — qualification | Partielle : environnements locaux vierges/existants vérifiés ; Plesk et scénarios de récupération non exécutés |
+| F — qualification | Partielle : socle local et récupération sur fixtures vérifiés ; restauration Mautic complète et Plesk non qualifiés |
 
 ## Critères empêchant une V1 de production
 

@@ -52,8 +52,14 @@ jobs:
         run: php -d memory_limit=1G Tests/integration.php /tmp/manager-native > native-report.json
       - name: Require actual JSON success report
         run: python3 -c "import json; r=json.load(open('native-report.json')); assert r['status']=='passed' and r['assertions']>=100"
+      - name: Verify native recovery with isolated code and MySQL fixtures
+        run: |
+          php -d memory_limit=1G Tests/recovery.php /tmp/manager-native > recovery-report.json
+          python3 -c "import json; r=json.load(open('recovery-report.json')); assert r['status']=='passed' and r['assertions']>=30"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: native-${{ matrix.mautic }}-php-${{ matrix.php }}
-          path: native-report.json
+          path: |
+            native-report.json
+            recovery-report.json

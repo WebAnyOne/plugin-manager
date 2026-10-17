@@ -1,0 +1,9 @@
+{
+  "suite": "native-recovery-fixture",
+  "mautic": "6.0.9",
+  "php": "8.3.14",
+  "assertions": 31,
+  "database": "isolated MySQL schema; no Mautic records changed",
+  "scope": "Tiny quiescent fixture code, schema and rows; native Manager recovery; parent interruption; not a full Mautic deployment or Plesk qualification",
+  "status": "passed"
+}

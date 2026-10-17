@@ -79,7 +79,7 @@ final class Manager
         foreach ($this->env->diagnose($this->state) as $key=>$ok) { if (!$ok) { throw new \RuntimeException('prerequisite_'.$key); } }
         return $this->queue->enqueue($input['plugin'],$input['version'],$input['operation'],$input['idempotency_key'],$user,$origin);
     }
-    public function deployment(): Deployment { $p=new Process();return new Deployment($this->env,$this->state,$p,new RestoreProvider($this->env,$p),new Https(),$this->queue); }
+    public function deployment(): Deployment { $p=new Process();return new Deployment($this->env,$this->state,$p,new RestoreProvider($this->env,$p,$this->state->dir()),new Https(),$this->queue); }
     public function worker(): array
     {
         if (PHP_SAPI!=='cli') { throw new \RuntimeException('cli_only'); }
@@ -159,7 +159,10 @@ final class Manager
                 unlink($meta);
             }
             $point=json_decode(file_get_contents($this->state->dir().'/operations/'.$id.'/checkpoint.json'),true,16,JSON_THROW_ON_ERROR);
-            $provider=new RestoreProvider($this->env,new Process());$provider->call('restore',$id,$point['checkpoint']);$provider->call('verify',$id,$point['checkpoint']);
+            // The independent supervisor takes this lock for each provider action.
+            // Keep composer.lock here; after parent death execution.lock still excludes a second recovery.
+            flock($execution,LOCK_UN);fclose($execution);$execution=null;
+            $provider=new RestoreProvider($this->env,new Process(),$this->state->dir());$provider->call('restore',$id,$point['checkpoint']);$provider->call('verify',$id,$point['checkpoint']);
             $this->state->change(static function (&$s) use ($id) { $s['jobs'][$id]['status']='restored';$s['jobs'][$id]['finished_at']=time();State::audit($s,'job_restored',0,['id'=>$id]); });
         } finally { if (is_resource($execution)) { flock($execution,LOCK_UN);fclose($execution); }flock($lock,LOCK_UN);fclose($lock); }
     }

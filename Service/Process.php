@@ -3,6 +3,10 @@ namespace MauticPlugin\WebAnyOnePluginManagerBundle\Service;
 use Symfony\Component\Process\Process as SymfonyProcess;
 final class Process
 {
+    public function guarded(array $argv,string $cwd,int $timeout,string $directory,array $env=[]): string
+    {
+        return $this->run([PHP_BINARY,__DIR__.'/../bin/run-guarded.php',$directory,$cwd,base64_encode(json_encode($argv,JSON_THROW_ON_ERROR)),(string)$timeout],$cwd,$timeout+10,$env);
+    }
     public function run(array $argv,string $cwd,int $timeout=300,array $env=[]): string
     {
         if (PHP_SAPI!=='cli') { throw new \RuntimeException('cli_only'); }

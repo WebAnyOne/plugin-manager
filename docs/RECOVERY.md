@@ -21,6 +21,14 @@ Le fournisseur doit couvrir ensemble le code, `vendor`, plugins, fichiers néces
 
 `verify` confirme que la restauration reste exploitable et que le système est cohérent ; un échec après mutation est un incident. La V1 ne restaure pas automatiquement en cas d'échec : elle laisse le système en état explicite de récupération et bloque les autres déploiements. Conserver les points jusqu'à validation opérateur et appliquer une rétention hors de ce plugin.
 
+Les appels `snapshot`, `restore` et `verify` passent par le superviseur indépendant qui conserve `execution.lock` jusqu'à la fin du fournisseur, même si le processus Mautic parent est tué. Une récupération concurrente est refusée (`worker_busy` ou `child_process_still_running`). Si le parent meurt, le job reste `recovery_required` ; relancer explicitement la récupération après la fin du fournisseur pour obtenir une nouvelle vérification avant de débloquer la file.
+
+## Test local reproductible
+
+`php -d memory_limit=1G Tests/recovery.php /chemin/du/laboratoire` démarre le kernel natif et appelle la vraie méthode de récupération du Manager. Le bootstrap refuse les bases autres que `apimonitor_lab_*`. Le test crée puis supprime une base MySQL distincte `apimonitor_lab_pm_recovery_*` et un petit projet sous `/tmp/wao-manager-recovery-*` ; le compte MySQL du laboratoire doit pouvoir créer cette base. Aucun enregistrement de la base Mautic n'est modifié.
+
+Le fournisseur dans `Tests/fixtures/restore-provider.php` est réservé à ce petit projet et sa table unique. Il démontre le retour des fichiers, des dépendances factices, du schéma et des lignes, les refus en cas d'échec/corruption et l'exclusion après arrêt brutal du parent. Sa date de test est enregistrée seulement après un premier aller-retour réel. **Ce fournisseur ne doit pas être configuré sur une installation Mautic** : il ne traite ni base Mautic complète, ni écritures concurrentes, ni Plesk. Ces résultats ne qualifient pas une restauration d'hébergement.
+
 ## États
 `queued → running → succeeded` seulement après Composer, nouveau démarrage Mautic, rechargement natif, vérification du bundle et sonde fonctionnelle. Une erreur avant mutation produit `failed`. Après mutation ou interruption incertaine : `recovery_required`. Une demande non traitée expire après 24 heures. Les tentatives sont conservées dans l'historique.
 

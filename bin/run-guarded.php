@@ -11,9 +11,14 @@ try {
     if (!is_resource($process)) { exit(70); }
     $status=proc_get_status($process);$pid=$status['pid'];
     file_put_contents($meta,json_encode(['pid'=>$pid,'supervisor'=>getmypid(),'started_at'=>time(),'deadline'=>time()+$timeout]));chmod($meta,0600);
-    stream_set_blocking($pipes[1],false);stream_set_blocking($pipes[2],false);$start=microtime(true);$code=1;$stopped=false;
+    stream_set_blocking($pipes[1],false);stream_set_blocking($pipes[2],false);$start=microtime(true);$code=1;$stopped=false;$readers=[1=>true,2=>true];
     do {
-        foreach ([1=>STDOUT,2=>STDERR] as $i=>$out) { $chunk=stream_get_contents($pipes[$i]);if ($chunk!=='') { fwrite($out,$chunk); } }
+        foreach ([1=>STDOUT,2=>STDERR] as $i=>$out) {
+            $chunk=stream_get_contents($pipes[$i]);
+            // The parent can disappear while the child still writes. Drain its pipes
+            // without logging broken-pipe notices (which may recursively write to stdout).
+            if ($chunk!=='' && $readers[$i] && @fwrite($out,$chunk)===false) { $readers[$i]=false; }
+        }
         if (!$status['running']) { $code=$status['exitcode'];break; }
         if (microtime(true)-$start>$timeout && !$stopped) { proc_terminate($process);$stopped=true; }
         if (microtime(true)-$start>$timeout+2) { proc_terminate($process,9); }

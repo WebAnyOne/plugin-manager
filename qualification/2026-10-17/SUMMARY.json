@@ -43,10 +43,33 @@
     "native-initialization-4.json": "40b36087ea35b57a65084f0fa8fb38d351ed76dd4d86742af625ea2de27ae1d7",
     "native-initialization-5.json": "720ecd8944ea6d165f065fa11fc3aa387fd14c67b737fa50ab97efa11c2bd10b",
     "native-initialization-6.json": "be35517ec0aaf4777ccf6d0b57cd748917a66224065a97e57a3a0e0b118d1cb2",
+    "native-recovery-4.json": "c137a2bef9b5ace49a71df501ebd9cc58d9758e6637647041f06477154b5e948",
+    "native-recovery-5.json": "e43a20bb54bf43bded995c567542876089466202ab52e951dada77313e638178",
+    "native-recovery-6.json": "b15bc43eb1c104482988619f10726551e04429a9bf3d8c2b43197e6e66217330",
+    "process-guard-php-7.4.33.json": "a64eccc926367acc8da21532d351a4bda19a4a233a107c38742b8bdad3c757c6",
+    "process-guard-php-8.1.31.json": "f5f4251f7df9a63c1af3710b497e504d56ac80f219e619b0bedf596da71f1bc3",
+    "process-guard-php-8.3.14.json": "64de7db3445a74bb9b668f539b54e0c33641eed8bc9d607ab3e8aa21ee2ddbf5",
     "process-guard.json": "9e4a6016eb1e18be13636f7d3687a02269045cb7d08783571b879d328162a2ea",
     "publication-gate-rejected.json": "0269e720dae3fe5bcbea1dd6b4b84114f900edbaa017b93aec738e4fe54f4558",
     "unit-php-7.4.33.json": "459c4b4c5192a14058b6a488b9055c9399520fba43b84dba2095ac9be41d73fc",
     "unit-php-8.1.31.json": "ebd8907c34928750f05f5e740de46ca0a817bc1e847800a3d200e9cf590e96ea",
     "unit-php-8.3.14.json": "e6295231e56734773baf946ebfe58c66b6f44d2ec1b83ea6f6c7acf42bb6590a"
+  },
+  "local_recovery_followup": {
+    "native_fixture_versions_passed": 3,
+    "assertions_per_version": 31,
+    "fresh_native_versions_rechecked": 3,
+    "plesk": "not_available_not_qualified",
+    "full_mautic_restore": "not_qualified",
+    "source_sha256": {
+      "Service/Process.php": "60c19fa9bf5fe29b304061b98ed88f658fdc388a9b4cc177be329ef0b32fb336",
+      "Service/RestoreProvider.php": "c0bb6144fad1b2a10a1899693d9e57ad631d06238866b953f81e1de86d7d641c",
+      "Service/Deployment.php": "0d18746d1d003a40baa7c058151f137d81e47a96abcbcb80ba549576aee74acb",
+      "Service/Manager.php": "470d08d3a2cc68620b5158ad75671054a7c00b138f18fcc89e1c9dd63e583d8c",
+      "bin/run-guarded.php": "a6bec6e258220f93e952fafa7fa4f35333058e1d37bab4433a0365f7e8c31a03",
+      "Tests/recovery.php": "3b89b354e51061211cee81e9cff11d81bb7a3b144e8591fd71d7892e40835d11",
+      "Tests/fixtures/restore-provider.php": "a2baf0e82b58b954d6817c64db4244b20737b6d32b1c57d1bd0f015332abf68e",
+      "Tests/process-guard.py": "89a3a66de22142389dbc25c72563ae48e73c7d86114fdd443da94e2c3f136c3c"
+    }
   }
 }
